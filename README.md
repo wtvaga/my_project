@@ -141,7 +141,7 @@ my_project> cd ..
 ```
 
 Open the browser:
-- go to: (https://www.github.com)[https://www.github.com]
+- go to: [https://www.github.com](https://www.github.com)
 - login with author credentials (author nickname and password)
 - create a new repository called `my_project`
 
