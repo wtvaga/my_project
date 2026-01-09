@@ -4,13 +4,7 @@ My_Package is intended as a demonstration of packaging Python projects for distr
 
 ## Installation
 
-One can install the package via **PyPI** or from **source**.
-
-### Install from PyPI
-
-```batch/bash
-> pip install my_package
-```
+One can locally install the package from **source**.
 
 ### Install from Source (GitHub)
 
@@ -68,9 +62,9 @@ True
 
 ## Process Description for Developers
 
-Developers can the next steps follow to build, install and push the project on GitHub.
+Developers can the next steps follow to build, distribute the project via **TestPyPI** and push the source on **GitHub**.
 
-### Local Installation and Built
+### Built and Distribution
 
 ```batch/bash
 > cd my_project
@@ -83,17 +77,44 @@ my_project> py3_9venv\Scripts\activate
 
 (py3_9venv) my_project> py -m pip install --upgrade build
 
-(py3_9venv) my_project> py -m pip install pytest # if not in the dependencies of file .toml
-
-(py3_9venv) my_project> pip install .
+(py3_9venv) my_project> py -m build
 ```
+
+The last command generates two files in the `dist` directory:
+- `my_package-0.0.1-py3-none-any.whl` (built distribution)
+- `my_package-0.0.1.tar.gz` (source distribution)
+ 
+Open the browser:
+- go to: [https://test.pypi.org/account/register](https://test.pypi.org/account/register)
+- register an account with author credentials (author nickname and password)
+- create an PyPI API token at [https://test.pypi.org/manage/account/#api-tokens](https://test.pypi.org/manage/account/#api-tokens)
+- set the *Scope* to *Entire account*
+- copy and save the PyPI API token
+
+```batch/bash
+(py3_9venv) my_project> py -m pip install --upgrade twine
+
+(py3_9venv) my_project> py -m twine upload --repository testpypi dist/*
+``` 
+
+Use the token value, including the `pypi`-prefix. Then, the package should be viewable on **TestPyPI**, e.g. [https://test.pypi.org/project/my_package](https://test.pypi.org/project/my_package). 
 
 ### Tests
 
-```batch/bash
-(py3_9venv) my_project> pytest tests -v
+One can use `pip` to install the package and verify whether it works.
 
-(py3_9venv) my_project> python
+```batch/bash
+> py -3.9 -m venv py3_9venv
+
+> py3_9venv\Scripts\activate
+
+(py3_9venv) > py -m pip install --upgrade pip
+
+(py3_9venv) > py -m pip install --index-url https://test.pypi.org/simple/ --no-deps my_package
+
+(py3_9venv) > pytest tests -v
+
+(py3_9venv) > python
 Python 3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)] on win32
 Type "help", "copyright", "credits" or "license" for more information.
 >>> from my_package import my_module
@@ -117,12 +138,14 @@ Test of 'Hello world!'
 True
 >>> exit()
 
-(py3_9venv) my_project> deactivate
+(py3_9venv) > deactivate
 ```
 
 ### Removal of unneccessary Files and Push on GitHub
 
 ```batch/bash
+> cd my_project
+
 my_project> rmdir /S py3_9venv
 
 my_project> rmdir /S .pytest_cache
@@ -130,6 +153,8 @@ my_project> rmdir /S .pytest_cache
 my_project> rmdir /S my_package\__pycache__
 
 my_project> rmdir /S tests\__pycache__
+
+my_project> rmdir /S dist
 
 my_project> cd ..
 
