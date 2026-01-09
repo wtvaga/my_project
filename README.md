@@ -1,6 +1,6 @@
 # My_Package
 
-My_Package is intended as a demonstration of packaging Python projects for distribution.
+My_Package is intended as a demonstration of packaging Python projects for distribution. The code of this repository is based on the [official Python documentation](https://packaging.python.org/en/latest/tutorials/packaging-projects/) and on the article [*Building Python Packages*](https://medium.com/@ebimsv/building-python-packages-07fbfbb959a9). Please refer to them for further information.
 
 ## Installation
 
