@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling>=1.26"]
+build-backend = "hatchling.build"
+
+
+[project]
+name = "my_package"
+version = "0.0.0"
+description = "A simple package example"
+requires-python = ">=3.9"
+dependencies = [
+	"pytest>=8.4",
+    "numpy>=1.25.0",
+]
+readme = "README.md"
+authors = [
+    {name = "Author Name", email = "author@example.com"}
+]
+maintainers = [
+    {name = "Maintainer Name", email = "maintainer@example.com"}
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+	"Operating System :: OS Independent",
+]
+license = {text = "MIT"}
+license-files = ["LICEN[CS]E*"]
+
+
+[project.urls]
+"Homepage" = "https://github.com/author_nickname/my_project"
+"Issues" = "https://github.com/author_nickname/my_project/issues"
