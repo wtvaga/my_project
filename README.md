@@ -181,7 +181,7 @@ $ git commit -m "Initial commit"
 
 $ git remote add origin https://github.com/author_nickname/my_project.git
 
-$ git branch - M main
+$ git branch -M main
 
 $ git push -u origin main
 
