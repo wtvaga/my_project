@@ -192,7 +192,7 @@ Open the browser:
 
 Open the Git bash:
 ```Git bash
-$ cd /d/GitHub
+$ cd /d/GitHub/my_project
 
 $ git init
 
