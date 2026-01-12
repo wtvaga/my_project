@@ -62,7 +62,7 @@ True
 
 ## Process Description for Developers
 
-Developers can the next steps follow to build, distribute the project via **TestPyPI** and push the source on **GitHub**.
+Developers can follow the successive steps to build, distribute the project via **TestPyPI** and push the source on **GitHub**.
 
 ### Built and Distribution
 
