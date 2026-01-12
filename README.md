@@ -81,14 +81,14 @@ my_project> py3_9venv\Scripts\activate
 ```
 
 The last command generates two files in the `dist` directory:
-- `my_package-0.0.1-py3-none-any.whl` (built distribution)
-- `my_package-0.0.1.tar.gz` (source distribution)
+- `my_package-0.0.0-py3-none-any.whl` (built distribution)
+- `my_package-0.0.0.tar.gz` (source distribution)
  
 Open the browser:
 - go to: [https://test.pypi.org/account/register](https://test.pypi.org/account/register)
 - register an account with author credentials (author nickname and password)
 - create an PyPI API token at [https://test.pypi.org/manage/account/#api-tokens](https://test.pypi.org/manage/account/#api-tokens)
-- set the *Scope* to *Entire account*
+- set *Scope* to *Entire account*
 - copy and save the PyPI API token
 
 ```batch/bash
@@ -97,7 +97,7 @@ Open the browser:
 (py3_9venv) my_project> py -m twine upload --repository testpypi dist/*
 ``` 
 
-Use the token value, including the `pypi`-prefix. Then, the package should be viewable on **TestPyPI**, e.g. [https://test.pypi.org/project/my_package](https://test.pypi.org/project/my_package). 
+Use the token value, including the PyPI-prefix. Then, the package should be viewable on **TestPyPI**, e.g. [https://test.pypi.org/project/my_package](https://test.pypi.org/project/my_package). 
 
 ### Tests
 
