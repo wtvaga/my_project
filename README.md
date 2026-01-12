@@ -8,10 +8,12 @@ One can locally install the package from **source**.
 
 ### Install from Source (GitHub)
 
+Open the Git bash:
 ```Git bash
 $ git clone https://github.com/author_nickname/my_project.git
 ```
 
+Open the batch in Windows (or bash in Linux):
 ```batch/bash
 > cd my_project
 
@@ -28,10 +30,27 @@ After installation, one can import `my_module` and test both the class `My_Class
 
 ### Example: Tests of the class and the function
 
+Test with `pytest`:
 ```batch/bash
 (py3_9venv) my_project> pytest tests -v
 ```
 
+Output of the successful test:
+```batch/bash
+================================================= test session starts =================================================
+platform win32 -- Python 3.9.13, pytest-8.4.2, pluggy-1.6.0 -- D:\my_project\py3_9venv\Scripts\python.exe
+cachedir: .pytest_cache
+rootdir: D:\my_project
+configfile: pyproject.toml
+collected 2 items
+
+tests/test_module.py::test_my_class PASSED                                                                       [ 50%]
+tests/test_module.py::test_my_function PASSED                                                                    [100%]
+
+================================================== 2 passed in 0.10s ==================================================
+```
+
+Test in the interactive mode:
 ```batch/bash
 (py3_9venv) my_project> python
 Python 3.9.13 (tags/v3.9.13:6de2ca5, May 17 2022, 16:36:42) [MSC v.1929 64 bit (AMD64)] on win32
@@ -66,6 +85,7 @@ Developers can follow the successive steps to build, distribute the project via 
 
 ### Built and Distribution
 
+Open the batch in Windows (or bash in Linux):
 ```batch/bash
 > cd my_project
 
@@ -102,7 +122,6 @@ Use the token value, including the PyPI-prefix. Then, the package should be view
 ### Tests
 
 One can use `pip` to install the package and verify whether it works.
-
 ```batch/bash
 > py -3.9 -m venv py3_9venv
 
@@ -143,6 +162,7 @@ True
 
 ### Removal of unneccessary Files and Push on GitHub
 
+Open the batch in Windows (or bash in Linux):
 ```batch/bash
 > cd my_project
 
@@ -170,6 +190,7 @@ Open the browser:
 - login with author credentials (author nickname and password)
 - create a new repository called `my_project`
 
+Open the Git bash:
 ```Git bash
 $ cd /d/GitHub
 
